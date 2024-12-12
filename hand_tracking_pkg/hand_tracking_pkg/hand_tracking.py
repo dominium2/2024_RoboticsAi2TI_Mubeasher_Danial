@@ -118,7 +118,7 @@ class HandTrackingNode(Node):
         if spin:
             twist.angular.z = 1.0  # Spin at a fixed angular velocity
         elif is_closed:
-            twist.linear.x = 0.2  # Move forward when hand is closed
+            twist.linear.x = 0.15  # Move forward when hand is closed
         else:
             twist.linear.x = 0.0  # Stop when hand is open or no hand is detected
         self.publisher.publish(twist)
