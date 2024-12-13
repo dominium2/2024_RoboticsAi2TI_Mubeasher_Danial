@@ -17,7 +17,7 @@ class HandTrackingNode(Node):
         # Subscriber for laser scan data (obstacle avoidance)
         self.obstacle_avoidance_subscriber = self.create_subscription(
             LaserScan, "/scan", self.laser_callback,
-            QoSProfile(depth=10, reliability=ReliabilityPolicy.RELIABLE)
+            QoSProfile(depth=10, reliability=ReliabilityPolicy.BEST_EFFORT)
         )
 
         # Mediapipe hand tracking setup
