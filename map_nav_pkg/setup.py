@@ -1,6 +1,8 @@
 from setuptools import setup
+import os
+from glob import glob
 
-package_name = 'cartographer_nav_pkg'
+package_name = 'map_nav_pkg'
 
 setup(
     name=package_name,
@@ -10,17 +12,18 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name), glob('launch/*.launch.py'))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='your_name',
-    maintainer_email='your_email@example.com',
-    description='TurtleBot3 patrol package for creating a Cartographer map',
-    license='Apache License 2.0',
+    maintainer='somebody very awesome',
+    maintainer_email='user@user.com',
+    description='TODO: Package description',
+    license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'cartographer_nav = cartographer_nav_pkg.cartographer_nav:main',
+            'map_nav = map_nav_pkg.map_nav:main'
         ],
     },
 )

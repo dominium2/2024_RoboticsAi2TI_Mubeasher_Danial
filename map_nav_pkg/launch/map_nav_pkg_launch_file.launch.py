@@ -5,21 +5,21 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='turtlebot3_cartographer',
-            executable='cartographer_node',
+            executable='cartographer',
             name='cartographer',
             output='screen',
             parameters=[{'use_sim_time': True}]
         ),
         Node(
-            package='turtlebot3_patrol',
-            executable='cartographer_nav',
-            name='cartographer_nav',
+            package='map_nav_pkg',
+            executable='map_nav',
+            name='map_nav',
             output='screen'
         ),
         Node(
-            package='turtlebot3_teleop',
-            executable='teleop_keyboard',
-            name='teleop_keyboard',
+            package='map_nav_pkg',
+            executable='additional_script',
+            name='additional_script',
             output='screen'
-        )
+        ),
     ])
